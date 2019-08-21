@@ -25,6 +25,7 @@ public class Exercicio1Calculadora extends Application {
         
         stage.setScene(scene);
         stage.show();
+        stage.setTitle("Exercicio 1");
     }
 
     /**

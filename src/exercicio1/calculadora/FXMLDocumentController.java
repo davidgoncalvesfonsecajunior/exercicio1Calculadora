@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
 /**
  *
@@ -35,11 +36,15 @@ public class FXMLDocumentController implements Initializable {
     private Label cubo;
     @FXML
     private Label numero;
+    @FXML
+    private AnchorPane EXERCICIO1;
+    @FXML
+    private Button limpar;
     
-    private void handleButtonAction(ActionEvent event) {
+    /*private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");
         label.setText("Hello World!");
-    }
+    }*/
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -48,15 +53,14 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void buttonCalcular(ActionEvent event) {
-        String valor = campo.getText();
-        
-        double a = Double.parseDouble(valor) * 2;
-        double b = Double.parseDouble(valor) * 3;
-        double c = Double.parseDouble(valor) * Double.parseDouble(valor);
-        double d = Double.parseDouble(valor) * c;
+        double x = Double.parseDouble(campo.getText());
+        double a = x * 2;
+        double b = x * 3;
+        double c = Math.pow(x, 2);
+        double d = Math.pow(x, 3);
         
         dobro.setText("Dobro: "+Double.toString(a));
-        triplo.setText("triplo: "+Double.toString(b));
+        triplo.setText("Triplo: "+Double.toString(b));
         quadrado.setText("Quadrado: "+Double.toString(c));
         cubo.setText("Cubo: "+Double.toString(d));
         
@@ -64,6 +68,14 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void CampNumero(ActionEvent event) {
+    }
+
+    @FXML
+    private void limparTexto(ActionEvent event) {
+        dobro.setText("Dobro: ");
+        triplo.setText("Triplo: ");
+        quadrado.setText("Quadrado: ");
+        cubo.setText("Cubo: ");
     }
     
 }
