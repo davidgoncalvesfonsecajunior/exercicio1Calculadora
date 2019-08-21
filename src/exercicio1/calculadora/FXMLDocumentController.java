@@ -66,9 +66,7 @@ public class FXMLDocumentController implements Initializable {
         
     }
 
-    @FXML
-    private void CampNumero(ActionEvent event) {
-    }
+   
 
     @FXML
     private void limparTexto(ActionEvent event) {
